@@ -211,66 +211,66 @@ fd.close()
 
 print ''
 print '%-50s used:[%0.3fM] max_used:[%0.3fM] limit:[%0.3fM] fail_count:[%d]'\
-	%(u'Kernel Mem Info(内核态内存，不可被swap):',
+	%(u'Kernel Mem Info:',
 	bd.kmemsize.getNum(bd.kmemsize.held, 'm'), \
 	bd.kmemsize.getNum(bd.kmemsize.maxheld, 'm'), \
 	bd.kmemsize.getNum(bd.kmemsize.barrier, 'm'), \
 	bd.kmemsize.getNum(bd.kmemsize.failcnt, 'n'), )
 print '%-50s used:[%0.3fM] max_used:[%0.3fM] limit:[%0.3fM] fail_count:[%d]'\
-	%(u'Mem already allocated Info(突发内存):',
+	%(u'Mem already allocated Info:',
 	bd.privvmpages.getNum(bd.privvmpages.held, 'm'), \
 	bd.privvmpages.getNum(bd.privvmpages.maxheld, 'm'), \
 	bd.privvmpages.getNum(bd.privvmpages.barrier, 'm'), \
 	bd.privvmpages.getNum(bd.privvmpages.failcnt, 'n'), )
 print '%-50s used:[%0.3fM] max_used:[%0.3fM] limit:[%0.3fM] fail_count:[%d]'\
-	%(u'Ram actually used(实际使用的母鸡内存):',
+	%(u'Ram actually used:',
 	bd.physpages.getNum(bd.physpages.held, 'm'), \
 	bd.physpages.getNum(bd.physpages.maxheld, 'm'), \
 	bd.physpages.getNum(bd.physpages.limit, 'm'), \
 	bd.physpages.getNum(bd.physpages.failcnt, 'n'), )
 print '%-50s used:[%0.3fM] max_used:[%0.3fM] limit:[%0.3fM] fail_count:[%d]'\
-	%(u'Mem (Ram + swap) used(使用的母鸡内存+swap):',
+	%(u'Mem (Ram + swap) used:',
 	bd.oomguarpages.getNum(bd.oomguarpages.held, 'm'), \
 	bd.oomguarpages.getNum(bd.oomguarpages.maxheld, 'm'), \
 	bd.oomguarpages.getNum(bd.oomguarpages.barrier, 'm'), \
 	bd.oomguarpages.getNum(bd.oomguarpages.failcnt, 'n'), )
 print '%-50s used:[%d] max_used:[%d] limit:[%d] fail_count:[%d]'\
-	%(u'Proc Num(进程数):',
+	%(u'Proc Num:',
 	bd.numproc.getNum(bd.numproc.held, 'n'), \
 	bd.numproc.getNum(bd.numproc.maxheld, 'n'), \
 	bd.numproc.getNum(bd.numproc.limit, 'n'), \
 	bd.numproc.getNum(bd.numproc.failcnt, 'n'), )
 print '%-50s used:[%d] max_used:[%d] limit:[%d] fail_count:[%d]'\
-	%(u'TCP Socket Num(Tcp连接数):',
+	%(u'TCP Socket Num:',
 	bd.numtcpsock.getNum(bd.numtcpsock.held, 'n'), \
 	bd.numtcpsock.getNum(bd.numtcpsock.maxheld, 'n'), \
 	bd.numtcpsock.getNum(bd.numtcpsock.limit, 'n'), \
 	bd.numtcpsock.getNum(bd.numtcpsock.failcnt, 'n'), )
 print '%-50s used:[%d] max_used:[%d] limit:[%d] fail_count:[%d]'\
-	%(u'Max SSH login Num(SSH登陆用户数):',
+	%(u'Max SSH login Num:',
 	bd.numpty.getNum(bd.numpty.held, 'n'), \
 	bd.numpty.getNum(bd.numpty.maxheld, 'n'), \
 	bd.numpty.getNum(bd.numpty.limit, 'n'), \
 	bd.numpty.getNum(bd.numpty.failcnt, 'n'), )
 print '%-50s used:[%0.3fM] max_used:[%0.3fM] limit:[%0.3fM] fail_count:[%d]'\
-	%(u'TCP Send Buff(Tcp发送缓冲区):',
+	%(u'TCP Send Buff:',
 	bd.tcpsndbuf.getNum(bd.tcpsndbuf.held, 'm'), \
 	bd.tcpsndbuf.getNum(bd.tcpsndbuf.maxheld, 'm'), \
 	bd.tcpsndbuf.getNum(bd.tcpsndbuf.barrier, 'm'), \
 	bd.tcpsndbuf.getNum(bd.tcpsndbuf.failcnt, 'n'), )
 print '%-50s used:[%0.3fM] max_used:[%0.3fM] limit:[%0.3fM] fail_count:[%d]'\
-	%(u'TCP Receive Buff(Tcp接收缓冲区):',
+	%(u'TCP Receive Buff:',
 	bd.tcprcvbuf.getNum(bd.tcprcvbuf.held, 'm'), \
 	bd.tcprcvbuf.getNum(bd.tcprcvbuf.maxheld, 'm'), \
 	bd.tcprcvbuf.getNum(bd.tcprcvbuf.barrier, 'm'), \
 	bd.tcprcvbuf.getNum(bd.tcprcvbuf.failcnt, 'n'), )
 print ''
 print '%-50s used:[%0.3fM] percent:[%0.3f%%]'\
-	%(u'Swap(使用的Swap，越大超售越严重):',
+	%(u'Swap:',
 	bd.oomguarpages.getNum(bd.oomguarpages.held - bd.physpages.held, 'm'), \
 	bd.numpty.getNum(1.0 * (bd.oomguarpages.held - bd.physpages.held) / bd.oomguarpages.held * 100, 'n'))
 print '%-50s used:[%0.3fM] limit:[%0.3fM]'\
-	%(u'Guarantee Mem(保证内存):',
+	%(u'Guarantee Mem:',
 	bd.numpty.getNum(bd.oomguarpages.held * 4096 + \
 						bd.kmemsize.held + \
 						bd.tcpsndbuf.held + \
