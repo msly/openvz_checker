@@ -191,7 +191,8 @@ def splitLine(bd, line_obj):
 		if line_obj.msgPos == 6:
 		   	bd._cur.failcnt = line_obj.getAttrNum()
 		   		
-
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 if len(sys.argv) < 2:
 	print 'Useage: \npython vz_checker.py filename'
